@@ -4,12 +4,15 @@
     justify-content: space-between;
     background-color:wheat;
     max-height:200px;
+
+
 }
 .logo{
     font-size: 30px;
-    margin-top:10px;
-    margin-right:10px;
+   margin-left: 10px;
+   
     margin-top: 18px;
+
 }
 .pics img{
     margin: 0px 10px;

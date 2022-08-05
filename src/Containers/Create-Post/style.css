@@ -1,0 +1,13 @@
+.createPost{
+display: flex;
+flex-direction: row;
+justify-content: center;
+margin-top:15px;
+}
+.createPost p {
+    
+    margin-top: 19px;
+    margin-left: 10px;
+    font-size: 20px;      
+}
+
