@@ -10,4 +10,9 @@
     color:white;
     margin: 10px 5px;
    font-weight: 400;
+   cursor: pointer;
+   transition:padding .5s
+}
+.signInBtn:hover{
+    padding:10px 14px;
 }

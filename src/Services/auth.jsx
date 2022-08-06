@@ -1,8 +1,10 @@
-import{auth,provider} from '../firebase'
-export const signInWithGoogle=async()=>{
+import {auth,provider}  from '../firebase'
+import { signInWithPopup } from "firebase/auth";
+const signInWithGoogle=async()=>{
 let user;
-await auth.signInWithPopup(provider).then((res)=>{
-    console.log(res);
+signInWithPopup(auth ,  provider)
+.then((res)=>{
+    
     user=res.user;
     console.log(user);  
 }).catch((err)=>{
@@ -12,10 +14,12 @@ return user;
 }
 
 
-export const logout=()=>{
+const logout=async()=>{
     let logout_success
-    auth.signOut().then((res)=>{
+        await   auth.signOut().then((res)=>{
         logout_success=true;
     }).catch((err)=>{console.log(err.message);})
     return logout_success;
 }
+
+export {signInWithGoogle}
