@@ -6,7 +6,6 @@ signInWithPopup(auth ,  provider)
 .then((res)=>{
     
     user=res.user;
-    console.log(user);  
 }).catch((err)=>{
     console.log(err);
 })
@@ -23,3 +22,4 @@ const logout=async()=>{
 }
 
 export {signInWithGoogle}
+

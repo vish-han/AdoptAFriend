@@ -4,7 +4,10 @@ import shelterPic from '../../assets/shelter.png'
 import catPic from '../../assets/cat.png'
 import SignInBtn from '../../Components/sign-in-btn'
 import './style.css'
+import { UserContext } from '../../Context/user'
 const Navbar = () => {
+  const [user, ] = React.useContext(UserContext).user
+
   return (
     <div className="navbar">
         <div className="logo">Adopt A Friend🐕</div>
@@ -12,8 +15,8 @@ const Navbar = () => {
         <img src={shelterPic} alt="" width="60px" height="60px"/>
         <img src={catPic} alt="" width="60px" height="60px"/>
         </div>
-        
-           <SignInBtn/>
+        {console.log(user)  }
+         {user===undefined?<p>Logged In </p>:<SignInBtn/>}  
     </div>
   ) 
 }

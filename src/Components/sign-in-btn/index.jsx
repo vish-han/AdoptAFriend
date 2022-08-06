@@ -1,18 +1,16 @@
 import React from 'react'
 import './style.css'
 import {signInWithGoogle,} from '../../Services/auth'
+import { UserContext } from '../../Context/user'
+import { useContext } from 'react'
 const SignInBtn = () => {
-  const [user,setUser]=React.useState({})
-  const signInBtnClick=async  () =>{ 
-  let signedInUser=await signInWithGoogle(  );
-  if(signedInUser){setUser(signedInUser)
-    console.log(user);
-  }
+  const [,setUser]=useContext(UserContext).user
+
+  const signInBtnClick=  async  () =>{ 
+  let signedInUser= await signInWithGoogle();
+setUser(signedInUser)
+
     
-  }
-  const a=()=>{
-    console.log("hello");
-    console.log(signInBtnClick);
   }
   return (
     <div className="signInBtn" onClick={signInBtnClick}>
